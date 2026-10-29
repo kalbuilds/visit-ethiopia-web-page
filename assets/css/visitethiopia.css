@@ -1,0 +1,660 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #151a1f;
+  color: #f4f6f7;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #e2a84b;
+  outline-offset: 3px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(21, 26, 31, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.headerContainer {
+  display: flex;
+  gap: 1.5rem;
+  width: 95%;
+  max-width: 76rem;
+  min-height: 5rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContainer .logo {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.headerContainer .logo .textlogo,
+.headerContainer .logo .imagelogo {
+  padding: 0;
+}
+
+.headerContainer .logo img {
+  display: block;
+  width: 3.25rem;
+  height: 2.15rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.headerContainer .logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  transition: 0.8s;
+  white-space: nowrap;
+}
+
+.headerContainer .logo a:hover {
+  text-shadow: 10px 10px 30px rgb(224, 220, 220);
+}
+
+.headerContainer .menu-bar {
+  position: relative;
+}
+
+.headerContainer .menu-bar .menu-toggle {
+  display: none;
+}
+
+.headerContainer .menu-bar ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.headerContainer .menu-bar ul li {
+  display: inline-flex;
+  padding: 0;
+}
+
+.headerContainer .menu-bar ul li a {
+  display: block;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.5rem;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.headerContainer .menu-bar ul li a:hover {
+  background: rgba(226, 168, 75, 0.14);
+  color: #e2a84b;
+  text-shadow: none;
+}
+
+.imagecontainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-image:
+    linear-gradient(90deg, rgba(12, 20, 18, 0.82), rgba(12, 20, 18, 0.18)),
+    url("../images/East Africa.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 36rem;
+  padding: 4rem 5%;
+}
+
+.imagecontainer .neverstop,
+.imagecontainer .exploring {
+  font-size: 5.5rem;
+  text-transform: capitalize;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  line-height: 1.02;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+.imagecontainer .neverstop {
+  color: #fff;
+}
+
+.imagecontainer .exploring {
+  color: #f2bd65;
+}
+
+.imagecontainer .visitEthiopia {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  font-style: normal;
+  max-width: 50rem;
+  width: 100%;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.imagecontainer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2a84b;
+  border: 0;
+  border-radius: 2rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  padding: 0.85rem 1.5rem;
+  color: #171a1d;
+  font-weight: bolder;
+  align-self: center;
+  width: fit-content;
+  margin: 2rem 0 0;
+  font-style: normal;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.imagecontainer a:hover {
+  transform: translateY(-2px);
+  background: #f0bd68;
+  color: #171a1d;
+}
+
+.adventuresContainer,
+.packagecontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding: 4rem 0;
+  justify-items: center;
+  align-items: stretch;
+  width: 95%;
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+.packagecontainer {
+  padding-top: 0;
+}
+
+.adventuresContainer .adventuretitle,
+.packagecontainer .packagetitle {
+  grid-column: 1 / -1;
+  justify-self: start;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.adventuresContainer .adventuretitle a,
+.packagecontainer .packagetitle a {
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bolder;
+  letter-spacing: 0;
+  padding: 0;
+}
+
+.adventuresContainer .adventuretitle a:hover,
+.packagecontainer .packagetitle a:hover {
+  color: #fff;
+  transition: 0.8s;
+  text-shadow: 10px 10px 30px rgb(224, 220, 220);
+}
+
+.adventuresContainer .box,
+.packagecontainer .box {
+  width: 100%;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background: #222a32;
+  overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.adventuresContainer .box:hover,
+.packagecontainer .box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(226, 168, 75, 0.55);
+  background: #29343d;
+  color: #f4f6f7;
+}
+
+.adventuresContainer .box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.adventuresContainer .box .image {
+  width: 100%;
+  text-align: center;
+}
+
+.adventuresContainer .box .image img {
+  display: block;
+  width: 13rem;
+  max-width: 100%;
+  height: 13rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.adventuresContainer .box .title {
+  padding: 0.5rem 0 0;
+}
+
+.adventuresContainer .box .title h1,
+.packagecontainer .box h1 {
+  color: #e2a84b;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  text-align: center;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.adventuresContainer .box .paragraph p,
+.packagecontainer .box p {
+  color: #c3cad5;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.adventuresContainer .box .readmore {
+  justify-items: start;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  transition: background-color 1s ease;
+}
+
+.adventuresContainer .box .readmore a {
+  display: block;
+  width: fit-content;
+  padding: 0.65rem 1rem;
+  background: rgba(226, 168, 75, 0.14);
+  border-radius: 2rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #e2a84b;
+  font-weight: bold;
+  font-style: normal;
+  justify-self: center;
+}
+
+.adventuresContainer .box .readmore a:hover {
+  background: #e2a84b;
+  color: #171a1d;
+}
+
+.packagecontainer .box img {
+  display: block;
+  width: 100%;
+  height: 14rem;
+  border-radius: 0.65rem;
+  object-fit: cover;
+}
+
+.contactcontainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  gap: 1.5rem;
+  width: 95%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3.5rem 0;
+}
+
+.contactcontainer .contacttitle {
+  width: 100%;
+  text-align: center;
+}
+
+.contactcontainer .contacttitle a {
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  padding: 0;
+}
+
+.contactcontainer .contacttitle a:hover {
+  color: #fff;
+  transition: 0.8s;
+  text-shadow: 10px 10px 30px rgb(224, 220, 220);
+}
+
+.contactcontainer form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.contactcontainer form input,
+.contactcontainer form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.55rem;
+  background: #222a32;
+  box-shadow: none;
+  color: #f4f6f7;
+  font: inherit;
+}
+
+.contactcontainer form textarea {
+  grid-column: 1 / -1;
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.contactcontainer form input::placeholder,
+.contactcontainer form textarea::placeholder {
+  color: #aeb7c1;
+  font: inherit;
+}
+
+.contactcontainer .submit {
+  display: block;
+  grid-column: 1 / -1;
+  justify-self: start;
+  width: auto;
+  margin: 0;
+  padding: 0.9rem 1.5rem;
+  border: 0;
+  border-radius: 2rem;
+  background: #e2a84b;
+  box-shadow: none;
+  color: #171a1d;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.contactcontainer .submit:hover {
+  background: #f0bd68;
+  color: #171a1d;
+}
+
+.footercontainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #101418;
+}
+
+.footercontainer .box h1 {
+  color: #e2a84b;
+  font-size: 1.1rem;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.footercontainer .box a {
+  display: block;
+  font-size: 1rem;
+  line-height: 2.2;
+  color: #c3cad5;
+  text-transform: capitalize;
+}
+
+.footercontainer .box a:hover {
+  color: #fff;
+  transition: 0.8s;
+  text-shadow: 10px 10px 30px rgb(224, 220, 220);
+}
+.footercontainer .copyright {
+  grid-column: 1 / -1;
+}
+
+.footercontainer .copyright h1 {
+  color: #c3cad5;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 2rem;
+  word-spacing: 0.2rem;
+}
+
+@media (max-width: 760px) {
+  .adventuresContainer,
+  .packagecontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .headerContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+
+  .headerContainer .menu-bar input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .headerContainer .menu-bar .menu-toggle {
+    display: flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.55rem;
+    cursor: pointer;
+  }
+
+  .headerContainer .menu-bar .menu-toggle span {
+    width: 1.25rem;
+    height: 2px;
+    background-color: #f4f6f7;
+  }
+
+  .headerContainer .menu-bar ul {
+    position: absolute;
+    top: 2.85rem;
+    right: 0;
+    display: none;
+    width: 15rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    background: #151a1f;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.35);
+  }
+
+  .headerContainer .menu-bar:hover ul {
+    display: flex;
+  }
+
+  .headerContainer .menu-bar ul li a {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .imagecontainer {
+    min-height: 31rem;
+    padding: 3rem 4%;
+  }
+
+  .imagecontainer .neverstop,
+  .imagecontainer .exploring {
+    font-size: 7.5rem;
+  }
+
+  .headerContainer .logo a {
+    font-size: 1.4rem;
+  }
+
+  .adventuresContainer .adventuretitle a,
+  .packagecontainer .packagetitle a,
+  .contactcontainer .contacttitle a {
+    font-size: 1.8rem;
+  }
+
+  .packagecontainer .box img {
+    height: 13rem;
+  }
+
+  .footercontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .headerContainer {
+    width: 95%;
+  }
+
+  .headerContainer .logo {
+    gap: 0.4rem;
+  }
+
+  .headerContainer .logo a {
+    font-size: 1.2rem;
+  }
+
+  .headerContainer .logo img {
+    width: 2.75rem;
+    height: 1.9rem;
+  }
+
+  .headerContainer .menu-bar ul {
+    width: 14rem;
+    gap: 0;
+  }
+
+  .headerContainer .menu-bar ul li a {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.88rem;
+  }
+
+  .imagecontainer {
+    min-height: 27rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .imagecontainer .neverstop,
+  .imagecontainer .exploring {
+    font-size: 2.5rem;
+  }
+
+  .imagecontainer .visitEthiopia {
+    font-size: 1rem;
+  }
+
+  .imagecontainer a {
+    align-self: flex-start;
+  }
+
+  .adventuresContainer,
+  .packagecontainer {
+    grid-template-columns: 1fr;
+    width: 95%;
+    padding: 3rem 0;
+  }
+
+  .packagecontainer {
+    padding-top: 0;
+  }
+
+  .adventuresContainer .adventuretitle a,
+  .packagecontainer .packagetitle a,
+  .contactcontainer .contacttitle a {
+    font-size: 1.6rem;
+  }
+
+  .adventuresContainer .box .image img {
+    width: 13rem;
+    max-width: 100%;
+    height: 13rem;
+  }
+
+  .packagecontainer .box img {
+    height: 12rem;
+  }
+
+  .contactcontainer {
+    width: 95%;
+    padding: 2.5rem 0;
+  }
+
+  .contactcontainer form {
+    grid-template-columns: 1fr;
+  }
+
+  .contactcontainer form textarea,
+  .contactcontainer .submit {
+    grid-column: 1;
+  }
+
+  .footercontainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .footercontainer .copyright h1 {
+    font-size: 0.9rem;
+  }
+}
